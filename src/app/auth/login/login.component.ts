@@ -1,0 +1,39 @@
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { first } from 'rxjs/operators';
+import { AuthService } from '../services/auth.service';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html'
+})
+export class LoginComponent implements OnInit {
+  form: FormGroup;
+  url: string;
+  constructor(
+    private authService: AuthService,
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private activatedRoute: ActivatedRoute) { }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      username: [''],
+      password: ['']
+    });
+    this.url = this.activatedRoute.snapshot.queryParams['url'] || '/';
+  }
+
+  get loginForm() {
+    return this.form.controls;
+  }
+
+  onSubmit() {
+    console.log(this.form);
+    const username = this.loginForm.username.value;
+    const password = this.loginForm.password.value;
+    this.authService.login(username, password).pipe(first())
+      .subscribe(res => this.router.navigate([this.url]));
+  }
+}
