@@ -1,15 +1,20 @@
 <div class="login">
   <div class="login__form">
-    <form [formGroup]="form" (submit)="onSubmit()">
-      <div class="login__form--group">
-        <label for="username">Username</label>
-        <input type="text" formControlName="username">
+    <form [formGroup]="form" class="form" (submit)="onSubmit()">
+      <!-- <div class="u-margin-bottom-medium"> -->
+        <h2 class="heading-secondary">Type your details</h2>
+      <!-- </div> -->
+      <div class="form__group">
+        <label for="username" class="form__label">Username</label>
+        <input type="text" formControlName="username" placeholder="Type your name" class="form__input" required>
       </div>
-      <div class="login__form--group">
-        <label for="password">Password</label>
-        <input type="password" formControlName="password">
+      <div class="form__group">
+        <label for="password" class="form__label">Password</label>
+        <input type="password" formControlName="password" placeholder="Type your password" class="form__input" required>
       </div>
-      <button>Login</button>
+      <div class="form__group">
+        <button class="btn btn--red">Login </button>
+      </div>
     </form>
   </div>
 </div>

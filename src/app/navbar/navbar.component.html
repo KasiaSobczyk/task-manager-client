@@ -1,0 +1,34 @@
+<div class="navbar">
+  <img src="assets/images/tick.png" alt="logo" class="logo">
+
+  <nav class="user-nav">
+    <div class="user-nav__item">
+      <!-- <a routerLink='/auth'> -->
+      <svg class="user-nav__icon" >
+        <use xlink:href="assets/images/sprite.svg#icon-home"></use>
+      </svg>
+      <!-- </a> -->
+      <span class="user-nav__notification">7</span>
+    </div>
+    <div class="user-nav__item">
+      <svg class="user-nav__icon">
+        <use xlink:href="assets/images/sprite.svg#icon-star-full"></use>
+      </svg>
+      <span class="user-nav__notification">13</span>
+    </div>
+    <div class="user-nav__user" routerLink='/auth'>
+      <img src="assets/images/SVG/user.svg" alt="profile's picture" class="user-nav__user-photo">
+      <span class="user-nav__user-name">John</span>
+    </div>
+  </nav>
+</div>
+
+<!-- <a routerLink='/'>Home</a>
+<a routerLink='/auth'>Login</a>
+<div class="navigation__item">
+  <button class="login__button" (click)="logout()">
+    <svg class="login__icon">
+      <use xlink:href="assets/images/sprite.svg#icon-user"></use>
+    </svg>
+  </button>
+</div> -->
