@@ -1,9 +1,10 @@
-import { TasksComponent } from './tasks.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CreateTaskComponent } from './create-task.component';
+
 import { SharedModule } from '@app/shared/shared.module';
-import { TaskListComponent } from './task-list/task-list.component';
+import { TasksComponent } from './tasks.component';
+import { CreateTaskComponent } from './create-task.component';
+import { TaskListComponent } from './task-list.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { TaskListComponent } from './task-list/task-list.component';
   imports: [
     CommonModule,
     SharedModule
-  ]
+  ],
+  exports: [TasksComponent]
 })
 export class TaskModule { }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Token } from 'src/app/shared/models/token.model';
+import { Token } from 'src/core/model/token.model';
 import { environment } from 'src/environments/environment';
 
 
