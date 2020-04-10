@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
-import { AuthService } from '@app/auth/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html'
+  selector: 'app-signup',
+  templateUrl: './signup.component.html'
 })
-export class LoginComponent implements OnInit {
+export class SignupComponent implements OnInit {
   form: FormGroup;
   url: string;
   submitted = false;
@@ -26,15 +26,16 @@ export class LoginComponent implements OnInit {
     this.url = this.activatedRoute.snapshot.queryParams['url'] || '/';
   }
 
-  get loginForm() {
+  get signupForm() {
     return this.form.controls;
   }
 
   onSubmit() {
     this.submitted = true;
-    const username = this.loginForm.username.value;
-    const password = this.loginForm.password.value;
-    this.authService.login(username, password).pipe(first())
+    const username = this.signupForm.username.value;
+    const password = this.signupForm.password.value;
+    this.authService.signUp(username, password).pipe(first())
       .subscribe(res => this.router.navigate([this.url]));
   }
+
 }

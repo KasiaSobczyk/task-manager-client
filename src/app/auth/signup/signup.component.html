@@ -1,26 +1,26 @@
-<div class="login">
-  <div class="login__form">
+<div class="signup">
+  <div class="signup__form">
     <form [formGroup]="form" class="form" (ngSubmit)="onSubmit()">
-      <h2 class="heading-secondary">Sign in</h2>
-      <h4 class="heading-secondary">or &nbsp;<a href="/sign-up">register</a>&nbsp; your account</h4>
+      <h2 class="heading-secondary">Sign up</h2>
+      <h4 class="heading-secondary">or &nbsp;<a href="/sign-up">log in</a></h4>
       <div class="form__group">
         <label for="username" class="form__label">Username</label>
         <input type="text" formControlName="username" placeholder="Type your name" class="form__input" minlength="4"
           required>
-        <div *ngIf="submitted && loginForm.username.errors" class="form__warning">
-          <div *ngIf="loginForm.username.errors.required">Username is required</div>
+        <div *ngIf="submitted && signupForm.username.errors" class="form__warning">
+          <div *ngIf="signupForm.username.errors.required">Username is required</div>
         </div>
       </div>
       <div class="form__group">
         <label for="password" class="form__label">Password</label>
         <input type="password" formControlName="password" placeholder="Type your password" class="form__input"
           minlength="8" required>
-        <div *ngIf="submitted && loginForm.password.errors" class="form__warning">
-          <div *ngIf="loginForm.password.errors.required">Password is required</div>
+        <div *ngIf="submitted && signupForm.password.errors" class="form__warning">
+          <div *ngIf="signupForm.password.errors.required">Password is required</div>
         </div>
       </div>
       <div class="form__group">
-        <button class="btn btn--red">Login</button>
+        <button class="btn btn--red">Sign up</button>
       </div>
     </form>
   </div>
