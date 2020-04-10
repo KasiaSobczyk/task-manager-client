@@ -11,6 +11,8 @@
   --primary-light: #435fff;
   --primary-dark: #120064;
 
+  --secondary: #db0a0a;
+
   --grey-light-1: #faf9f9;
   --grey-light-2: #f4f2f2;
   --grey-light-3: #f0eeee;
@@ -37,7 +39,7 @@ body {
   background-size: cover;
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
-  color: var(--grey-light-2);
+  color: var(--black);
   font-weight: 400;
   line-height: 1.6;
 }

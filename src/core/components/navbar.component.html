@@ -1,20 +1,23 @@
 <div class="navbar">
-  <img src="assets/images/tick.png" alt="logo" class="logo">
+  <img src="assets/images/logo.png" alt="logo" class="logo">
 
   <nav class="user-nav">
     <div class="user-nav__item" routerLink='/'>
-      <!-- <a routerLink='/auth'> -->
-      <svg class="user-nav__icon" >
+      <svg class="user-nav__icon">
         <use xlink:href="assets/images/sprite.svg#icon-home"></use>
       </svg>
-      <!-- </a> -->
       <span class="user-nav__notification">7</span>
     </div>
-    <div class="user-nav__item">
+    <div class="user-nav__item" routerLink='/tasks'>
       <svg class="user-nav__icon">
         <use xlink:href="assets/images/sprite.svg#icon-star-full"></use>
       </svg>
       <span class="user-nav__notification">13</span>
+    </div>
+    <div class="user-nav__item" (click)="logout()">
+      <svg class="user-nav__icon">
+        <use xlink:href="assets/images/sprite.svg#icon-exit"></use>
+      </svg>
     </div>
     <div class="user-nav__user" routerLink='/login'>
       <img src="assets/images/SVG/user.svg" alt="profile's picture" class="user-nav__user-photo">
@@ -22,13 +25,3 @@
     </div>
   </nav>
 </div>
-
-<!-- <a routerLink='/'>Home</a>
-<a routerLink='/auth'>Login</a>
-<div class="navigation__item">
-  <button class="login__button" (click)="logout()">
-    <svg class="login__icon">
-      <use xlink:href="assets/images/sprite.svg#icon-user"></use>
-    </svg>
-  </button>
-</div> -->

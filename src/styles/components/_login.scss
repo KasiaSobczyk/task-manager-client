@@ -43,7 +43,7 @@
     padding: 1.5rem 2rem;
     border-radius: 2px;
     color: var(--black);
-    background-color: rgba(#fff, 0.5);
+    background-color: rgba(var(--white), 0.5);
     border-bottom: 3px solid transparent;
     width: 70%;
     transition: all 0.3s;
@@ -58,11 +58,11 @@
 
   &__input:focus {
     outline: none;
-    box-shadow: 0 1rem 2rem rgba(#000, 0.1);
+    box-shadow: 0 1rem 2rem rgba(var(--black), 0.1);
     border-bottom: 3px solid var(--primary-light);
   }
   &__label {
-    color: #000;
+    color: var(--black);
     font-size: 1.2rem;
     font-weight: 700;
     margin: 0 45rem 0.4rem 0;
@@ -97,7 +97,7 @@
 
   &:hover {
     transform: translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+    box-shadow: 0 1rem 2rem rgba(var(--black), 0.2);
 
     &::after {
       transform: scaleX(1.4) scaleY(1.6);
@@ -105,7 +105,7 @@
     }
   }
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }

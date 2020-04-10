@@ -1,18 +1,17 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { User } from '../models/auth.model';
-import { environment } from 'src/environments/environment';
 import { Token } from 'src/app/shared/models/token.model';
+import { environment } from 'src/environments/environment';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  public currentUser: Observable<Token>;
+  public currentUser: Observable<Token>; z
   private currentUserSubject: BehaviorSubject<Token>;
 
   constructor(private http: HttpClient) {

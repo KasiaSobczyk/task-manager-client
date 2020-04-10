@@ -1,4 +1,4 @@
-import { Task } from 'src/app/tasks/models/task.model';
+import { Task } from 'src/core/model/task.model';
 
 export interface User {
   id: number;

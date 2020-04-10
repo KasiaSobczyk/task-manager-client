@@ -1,14 +1,15 @@
-import { AppComponent } from './app.component';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/login.component';
+import { SignupComponent } from './auth/signup.component';
+import { HomeComponent } from './home.component';
 import { AuthGuard } from './shared/auth.guard';
-import { LoginComponent } from './auth/login/login.component';
-import { HomeComponent } from './home/home.component';
-import { SignupComponent } from './auth/signup/signup.component';
+import { TasksComponent } from './tasks/tasks.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignupComponent },
+  { path: 'tasks', component: TasksComponent },
   { path: '**', redirectTo: '' }
 ];
 
