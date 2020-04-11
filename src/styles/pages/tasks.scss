@@ -1,0 +1,17 @@
+.tasks {
+  background-color: var(--grey-ligt-1);
+}
+
+.add-task {
+  display: flex;
+  justify-content: center;
+
+  &__wrapper {
+    background-color: var(--grey-light-1);
+    flex: 0 0 60%;
+    box-shadow: var(--shadow-dark);
+    max-height: 60%;
+    margin-top: 7rem;
+    display: flex;
+  }
+}

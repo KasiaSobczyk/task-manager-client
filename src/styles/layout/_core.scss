@@ -1,3 +1,9 @@
+.header {
+  background-color: var(--grey-light-2);
+  height: 7rem;
+  flex: 0;
+}
+
 .container {
   min-height: 90rem;
   background-color: var(--grey-dark-3);
@@ -8,14 +14,12 @@
   flex-direction: column;
 }
 
-.header {
-  background-color: var(--grey-light-1);
-  height: 7rem;
-  flex: 0;
-}
-
 .content {
   flex: 1;
   height: 80rem;
-  background-color: var(--white);
+  background-color: var(--grey-light-1);
+
+  & > * > * {
+    height: 83rem;
+  }
 }

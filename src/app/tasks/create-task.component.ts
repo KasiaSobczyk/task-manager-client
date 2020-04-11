@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import { first } from 'rxjs/operators';
+import { TasksService } from './tasks.service';
 
 @Component({
   selector: 'app-create-task',
@@ -10,12 +14,15 @@ export class CreateTaskComponent implements OnInit {
   url: string;
   submitted = false;
   constructor(
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private taskService: TasksService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: [''],
-      password: ['']
+      title: ['', Validators.required],
+      description: ['', Validators.required]
     });
   }
 
@@ -23,11 +30,12 @@ export class CreateTaskComponent implements OnInit {
     return this.form.controls;
   }
 
-  onSubmit() {
+  createTask() {
     this.submitted = true;
+    if (this.taskForm.invalid) { return; }
     const title = this.taskForm.title.value;
     const desc = this.taskForm.description.value;
-    // this.authService.signUp(username, password).pipe(first())
-    //   .subscribe(res => this.router.navigate([this.url]));
+    this.taskService.addTask(title, desc).pipe(first())
+      .subscribe(res => this.router.navigate(['tasks']));
   }
 }
