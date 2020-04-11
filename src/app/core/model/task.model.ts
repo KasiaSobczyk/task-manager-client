@@ -1,4 +1,4 @@
-import { User } from 'src/core/model/auth.model';
+import { User } from './auth.model';
 
 export interface Task {
   id: number;

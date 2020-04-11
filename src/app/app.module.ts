@@ -1,30 +1,28 @@
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
-import { AuthModule } from './auth/auth.module';
-import { HomeComponent } from './home.component';
-import { NavbarComponent } from '../core/components/navbar.component';
 import { TokenInterceptorService } from './shared/token-interceptor';
-import { TasksComponent } from './tasks/tasks.component';
+import { HomeComponent } from './home.component';
+import { declarations } from './core/components';
+import { AuthModule } from './auth/auth.module';
+import { TaskModule } from './tasks/task.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    TasksComponent,
     HomeComponent,
-    NavbarComponent,
+    declarations
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     appRoutingModule,
-    AuthModule
+    AuthModule,
+    TaskModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }
