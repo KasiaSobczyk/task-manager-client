@@ -1,14 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgModule } from '@angular/core';
 import { SharedModule } from '@app/shared/shared.module';
-import { TasksComponent } from './tasks.component';
 import { CreateTaskComponent } from './create-task.component';
-import { TaskListComponent } from './task-list.component';
+import { TaskListsComponent } from './task-lists.component';
+import { TasksContainerComponent } from './tasks-container.component';
+import { SelectedListComponent } from './selected-list.component';
+
 
 
 @NgModule({
-  declarations: [TasksComponent, CreateTaskComponent, TaskListComponent],
+  declarations: [TasksContainerComponent, CreateTaskComponent, TaskListsComponent, SelectedListComponent],
   imports: [
     CommonModule,
     SharedModule

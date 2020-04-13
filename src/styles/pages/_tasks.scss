@@ -1,0 +1,15 @@
+.tasks {
+  display: flex;
+  &__list {
+    background-color: var(--grey-light-3);
+    flex: 0 0 18%;
+  }
+  &__view {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    & > * {
+      flex: 0 0 90%;
+    }
+  }
+}
