@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+
 import { first } from 'rxjs/operators';
 import { AuthService } from '@app/auth/auth.service';
 
@@ -20,8 +21,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      username: [''],
-      password: ['']
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
     this.url = this.activatedRoute.snapshot.queryParams['url'] || '/';
   }
@@ -32,6 +33,9 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    if (this.form.invalid) {
+      return;
+    }
     const username = this.loginForm.username.value;
     const password = this.loginForm.password.value;
     this.authService.login(username, password).pipe(first())

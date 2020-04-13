@@ -1,0 +1,13 @@
+.login {
+  display: flex;
+  justify-content: center;
+
+  &__form {
+    background-color: var(--grey-light-1);
+    flex: 0 0 60%;
+    box-shadow: var(--shadow-dark);
+    max-height: 60%;
+    margin-top: 7rem;
+    display: flex;
+  }
+}
